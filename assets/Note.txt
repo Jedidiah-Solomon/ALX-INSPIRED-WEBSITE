@@ -1,0 +1,28 @@
+font-family: 'Space Grotesk', sans-serif;
+Go to https://royalfig.github.io/fluid-typography-calculator/
+How to Use This Calculator
+Enter min and max font sizes in px or rem. Your base font will always remain within these limits
+Enter your min and max viewport widths in px or rem.
+In between these viewport limits, font size will scale in proportion to the client's viewport width
+The Result panel shows the generated formula that you can copy into your CSS
+E.g 
+Min Font Size
+24px
+
+
+Max Font Size
+32px
+
+
+Min Viewport
+375px
+
+
+Max Viewport
+768px
+
+So answer is:
+font-size: 1.5rem;  //This is for fall back
+font-size: clamp(1.5rem, 1.0229007633587786rem + 2.035623409669211vw, 2rem);
+
+Copy the two
