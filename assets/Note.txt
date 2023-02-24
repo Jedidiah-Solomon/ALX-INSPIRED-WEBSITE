@@ -26,3 +26,53 @@ font-size: 1.5rem;  //This is for fall back
 font-size: clamp(1.5rem, 1.0229007633587786rem + 2.035623409669211vw, 2rem);
 
 Copy the two
+
+
+
+How to remove .html extension from URL of a static page ?
+All the pages on the website have a structure which is given by HTML. HTML provides the structure to content, text, tables, headings, and lists on the webpage that makes the page easy to read. While saving an HTML document it has an extension as .html. Therefore, the URL of the website have a .html extension. The .html extension can be easily removed by editing the .htaccess file.
+
+.htaccess file: The .htaccess file is created with a Text Editor like Notepad. It is a simple ASCII file that lets the server know what configuration changes are to be made on a per-directory basis.
+
+Note: The .htaccess is the full name of the file. It is not file.htaccess, it is simply .htaccess.
+
+Removing .html Extension: To remove the .html extension from a URL. For example: 
+From  example.com/content.html
+To 
+
+example.com/content
+You have to follow these steps: 
+
+Log in to cPanel account.
+In the Files section, click on the File Manager icon.
+Click on the Settings Button in the top right corner.
+If you want to make changes in the Primary Domain then Click on the radio button next to the Web Root. If changes are to be made on Other Domains, then Click the dropdown menu and find the domain in which changes are to be made.
+Remember to check the checkbox next to Show Hidden Files. Now click the Save Button to return to the File Manager window.
+Now you are in the Root Folder of the domain which you have selected to make changes. Search for the .htaccess file and right-click on it. Click on the Edit option in the menu. You can now add code to the .htaccess file.
+Add the following code inside the .htaccess file: 
+--------------------------------------------------------------------------
+
+
+#remove html file extension https://jedidiahsolomon.com/page.html
+# to https://jedidiahsolomon.com/page
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.html [NC, L]
+
+
+
+
+--------------------------------------------
+Click on the Save Changes Button and then on Close Button.
+You can now link any page inside the HTML document without needing to add the extension of the page as no extension will be visible now in the URL of the website.
+
+Example:  
+
+<a href="http://example.com/image" title="image">image</a>
+The search engine may index these pages as duplicate content, to overcome this add a <canonical> meta tag in the HTML file. 
+
+Example:  
+
+<link rel="canonical" href="https://example.com/blog/first-blog" />
+ 
