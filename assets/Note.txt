@@ -75,4 +75,10 @@ The search engine may index these pages as duplicate content, to overcome this a
 Example:  
 
 <link rel="canonical" href="https://example.com/blog/first-blog" />
+
+
+==========================================================================
+ <div class="img">
+      <img src="https://source.unsplash.com/200x200" alt="">   //How to generate random pic from unsplash.com
+    </div>
  
